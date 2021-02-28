@@ -1,3 +1,5 @@
+ git submodule add https://github.com/googleapis/googleapis --depth=1
+
 https://jergoo.gitbooks.io/go-grpc-practice-guide/content/chapter3/gateway.html
 
 https://github.com/grpc-ecosystem/grpc-gateway

@@ -25,3 +25,12 @@ protoc --go_out=plugins=grpc:. hello_http/hello_http.proto
 
 curl -X POST -k http://localhost:8080/example/echo -d '{"name": "gRPC-HTTP is working!"}'
 {"message":"Hello gRPC-HTTP is working!."}
+
+
+go get -u github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger
+
+ protoc -I/usr/local/include -I. -Igoogle/api --swagger_out=logtostderr=true:. hello_http/hello_http.proto
+
+ https://segmentfault.com/a/1190000013513469
+
+ https://github.com/envoyproxy/protoc-gen-validate

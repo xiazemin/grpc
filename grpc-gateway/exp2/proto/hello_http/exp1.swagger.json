@@ -1,0 +1,111 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "hello_http/exp1.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Messaging1"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/{name=messages/*}": {
+      "get": {
+        "operationId": "Messaging1_GetMessage",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/hello_httpMessage"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "name",
+            "description": "test",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "uuid",
+            "description": "This comment will end up direcly in your Open API definition. The UUID field.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Messaging1"
+        ],
+        "security": [
+          {
+            "ApiKeyAuth": [
+              "read"
+            ],
+            "OAuth2": [
+              "read",
+              "write"
+            ]
+          }
+        ],
+        "x-irreversible": true
+      }
+    }
+  },
+  "definitions": {
+    "hello_httpMessage": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string",
+          "title": "test2"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "typeUrl": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    }
+  }
+}

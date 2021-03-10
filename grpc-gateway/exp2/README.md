@@ -34,3 +34,30 @@ go get -u github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger
  https://segmentfault.com/a/1190000013513469
 
  https://github.com/envoyproxy/protoc-gen-validate
+
+
+ https://cloud.tencent.com/developer/article/1627554
+ https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/descriptor.proto
+ https://github.com/grpc-ecosystem/grpc-gateway
+
+ https://github.com/protocolbuffers/protobuf-go
+
+
+ go install \
+    github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway \
+    github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2 \
+    google.golang.org/protobuf/cmd/protoc-gen-go \
+    google.golang.org/grpc/cmd/protoc-gen-go-grpc
+
+
+google/api/annotations.proto
+google/api/field_behaviour.proto
+google/api/http.proto
+google/api/httbody.proto
+
+
+https://grpc-ecosystem.github.io/grpc-gateway/docs/mapping/customizing_openapi_output/
+
+https://github.com/grpc-ecosystem/grpc-gateway/blob/master/protoc-gen-openapiv2/options/annotations.proto
+
+https://github.com/grpc-ecosystem/grpc-gateway/blob/master/protoc-gen-openapiv2/options/openapiv2.proto

@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package hello_http;
+option go_package="hello_http";
+
+import "google/api/annotations.proto";
+
+service Messaging1 {
+       rpc GetMessage(GetMessageRequest)returns (Message){
+           option (google.api.http) = {
+            get:"/v1/messages/{message_id}"
+           };
+       }
+}
+
+message GetMessageRequest{
+    message SubMessage{
+        string subfield =1;
+    }
+    //message_id before this work
+    string message_id =1; //message_id  this not
+    int64 revision =2;
+    SubMessage sub=3;
+}
+
+message Message{
+    string text=1; //body response
+}
+
+
+

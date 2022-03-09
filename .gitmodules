@@ -1,0 +1,6 @@
+[submodule "sqlc-grpc"]
+	path = sqlc-grpc
+	url = https://github.com/walterwanderley/sqlc-grpc
+[submodule "grpcurl"]
+	path = grpcurl
+	url = https://github.com/fullstorydev/grpcurl

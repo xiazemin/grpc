@@ -1,0 +1,9 @@
+version: "1"
+packages:
+  - path: "internal/author"
+    queries: "./queries.sql"
+    schema: "./"
+    engine: "mysql"
+    dsn: "root:@tcp(127.0.0.1:3306)/test"
+    tables:
+     - authors
